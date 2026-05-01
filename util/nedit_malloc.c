@@ -77,10 +77,11 @@ void NEditFree(void *ptr)
 char *NEditStrdup(const char *str)
 {
     size_t len;
+    char *new_str;
     if(!str)
         return NULL;
     len = strlen(str);
-    char *new_str= (char*)malloc(len+1);
+    new_str= (char*)malloc(len+1);
     if(!new_str) {
         fprintf(stderr,"NEditStrdup(%lu) failed\n", (unsigned long)len);
         exit(1);
